@@ -13,7 +13,6 @@ const spotifyAuthenticationAPI = axios.create({
   baseURL: import.meta.env.VITE_SPOTIFY_API,
 });
 
-const navigate = useNavigate();
 export const topGenres = async (param: SpotifySearchParam) => {
   var response = await spotifyAuthenticationAPI.get<Artist>("/me/top/artists", {
     headers: {
@@ -67,6 +66,8 @@ export const topGenres = async (param: SpotifySearchParam) => {
 };
 
 export const topArtist = async (param: SpotifySearchParam) => {
+  
+const navigate = useNavigate();
   try {
     return await spotifyAuthenticationAPI.get<Artist>("/me/top/artists", {
       headers: {
