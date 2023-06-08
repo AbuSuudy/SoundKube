@@ -80,6 +80,8 @@ export const topArtist = async (param: SpotifySearchParam) => {
   
     if (axios.isAxiosError(error)) {
 
+      console.log(error);
+
        if(error.status == 403){
 
         toast.error("You would need to contract added to user.");
