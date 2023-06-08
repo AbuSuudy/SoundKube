@@ -67,7 +67,7 @@ export const topGenres = async (param: SpotifySearchParam) => {
 
 export const topArtist = async (param: SpotifySearchParam) => {
   
-//const navigate = useNavigate();
+const navigate = useNavigate();
   try {
     return await spotifyAuthenticationAPI.get<Artist>("/me/top/artists", {
       headers: {
@@ -82,16 +82,10 @@ export const topArtist = async (param: SpotifySearchParam) => {
   } catch (error) {
   
     if (axios.isAxiosError(error)) {
-
-      console.log(error);
-
        if(error.response?.status == 403){
-
-       // navigate("/Login")
-        toast.error("You would need to pass on spotify email to admin to use the system.", {autoClose : false});
+        toast.error("You would need to pass on your spotify email to the admin to use the system.", {autoClose : false});
 
        }else{
-
         toast.error("Error Getting Top Artist");
 
        }

@@ -16,6 +16,8 @@ import {
 
 import { menuContext } from "./App";
 import { ArtistTable, SpotifyTimeRange } from "./Model/Models";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function Artist() {
   const [data, setData] = useState<ArtistTable[]>([]);
@@ -24,6 +26,7 @@ export default function Artist() {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const [code, setCode] = useState(urlParams.get("code"));
+  const navigate = useNavigate();
 
   function setBackground() {
     if (window.innerWidth < 500) {
@@ -52,7 +55,17 @@ export default function Artist() {
           TimeRange: Object.values(timeframe)[0],
           Limit: 50,
           Offset: 0,
-        } as SpotifySearchParam);
+        } as SpotifySearchParam).catch((error) => {
+         
+          if (axios.isAxiosError(error)) {
+            if(error.response?.status == 403){
+              navigate("/Login");
+            }
+          }
+
+        });
+
+        
 
         response?.data.items.forEach((element: Item) => {
           artistList.push({
