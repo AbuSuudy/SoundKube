@@ -85,7 +85,7 @@ export const topArtist = async (param: SpotifySearchParam) => {
 
 
        if(error.response?.status == 403){
-        toast.error("You would need to pass on your spotify email to the admin to use the system.", {autoClose : false});
+        toast.error("You would need to pass on your spotify email to the admin of the system.", {autoClose : false});
 
        }else{
 
