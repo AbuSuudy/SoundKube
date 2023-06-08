@@ -77,7 +77,15 @@ export const topArtist = async (param: SpotifySearchParam) => {
       },
     });
   } catch (error) {
-    toast.error("Error Getting Top Artist");
+    
+
+    if (error.response.status == "403") {
+      
+      toast.error("You would need to contract added to user group.");
+
+    }else{
+      toast.error("Error Getting Top Artist");
+    }
   }
 };
 
