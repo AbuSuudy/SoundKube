@@ -55,7 +55,15 @@ export default function Artist() {
           TimeRange: Object.values(timeframe)[0],
           Limit: 50,
           Offset: 0,
-        } as SpotifySearchParam);
+        } as SpotifySearchParam).catch((error) => {
+         
+          if (axios.isAxiosError(error)) {
+            if(error.response?.status == 403){
+              navigate("/Login");
+            }
+          }
+
+        });
 
         
 
