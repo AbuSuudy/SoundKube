@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import { toast } from "react-toastify";
 import {
   ChartData,
@@ -77,14 +77,18 @@ export const topArtist = async (param: SpotifySearchParam) => {
       },
     });
   } catch (error) {
-    
+  
+    if (axios.isAxiosError(error)) {
 
-    if (error.response.status == "403") {
-      
-      toast.error("You would need to contract added to user group.");
+       if(error.code == "403"){
 
-    }else{
-      toast.error("Error Getting Top Artist");
+        toast.error("You would need to contract added to user.");
+
+       }else{
+
+        toast.error("Error Getting Top Artist");
+        
+       }
     }
   }
 };
