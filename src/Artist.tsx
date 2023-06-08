@@ -56,7 +56,7 @@ export default function Artist() {
           Limit: 50,
           Offset: 0,
         } as SpotifySearchParam).catch((error) => {
-         
+         console.log(error);
           if (axios.isAxiosError(error)) {
             if(error.response?.status == 403){
               navigate("/Login");
