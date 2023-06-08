@@ -82,7 +82,7 @@ export const topArtist = async (param: SpotifySearchParam) => {
 
       console.log(error);
 
-       if(error.status == 403){
+       if(error.response?.status == 403){
 
         toast.error("You would need to contract added to user.");
 
