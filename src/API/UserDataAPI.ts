@@ -8,10 +8,12 @@ import {
   GenreTable,
 } from "../Model/Models";
 import { Tracks } from "../Model/Tracks";
+import { useNavigate } from "react-router-dom";
 const spotifyAuthenticationAPI = axios.create({
   baseURL: import.meta.env.VITE_SPOTIFY_API,
 });
 
+const navigate = useNavigate();
 export const topGenres = async (param: SpotifySearchParam) => {
   var response = await spotifyAuthenticationAPI.get<Artist>("/me/top/artists", {
     headers: {
@@ -84,7 +86,8 @@ export const topArtist = async (param: SpotifySearchParam) => {
 
        if(error.response?.status == 403){
 
-        toast.error("You would need to contract added to user.");
+        navigate("/Login")
+        toast.error("You would need to pass on spotify email to admin to use the system.", {autoClose : false});
 
        }else{
 

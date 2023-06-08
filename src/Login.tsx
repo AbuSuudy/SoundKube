@@ -3,14 +3,17 @@ import {
   generateCodeChallenge,
   generateRandomString,
 } from "./API/SpotifyAuthenticationAPI";
-
 import SoundCube from "../src/assets/SoundCube.svg";
+import { menuContext } from "./App";
+import { Context, useContext } from "react";
 
 function Login() {
   document.body.style.backgroundImage = `url(${SoundCube})`;
   document.body.style.backgroundRepeat = "no-repeat";
   document.body.style.backgroundSize = "cover";
   document.body.style.backgroundPosition = "center bottom";
+  const { setNavBarVis, setSelectedIndex } = useContext(menuContext);
+  setNavBarVis(false);
 
   return (
     <div className="opacity-0 fade-in rounded-lg relative bg-white px-6 pt-10 pb-8 shadow-2xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm: sm:px-10 ">

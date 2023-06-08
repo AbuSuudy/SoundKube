@@ -192,7 +192,7 @@ export default function GenreChart() {
                 leaveTo="opacity-0 scale-95"
               >
                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                  <table className="table-auto relative mx-auto transition ease-in-out delay-150 mb-14 h-52">
+                  <table className="table-auto relative mx-auto transition ease-in-out delay-150 mb-14">
                     <thead>
                       {table.getHeaderGroups().map((headerGroup) => (
                         <tr key={headerGroup.id}>
