@@ -19,7 +19,7 @@ export let SinSetup = (p5: any, canvasParentRef: any) => {
 export let SinDraw = (p5: any) => {
   p5.background(255);
 
-  theta += 0.02;
+  theta += 0.009;
 
   let x = theta;
   for (let i = 0; i < yvalues.length; i++) {
