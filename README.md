@@ -3,10 +3,8 @@
 Soundkube is an web app that uses the spotify api to display a users listening habits. Such as top artists and tracks within a given time range: long, medium and short term. Also creates a visulisation of the users top genres. <br>  <br> <br>
 
 <p align="center">
-<img  src="https://github.com/AbuSuudy/SoundKube/assets/15980314/27ebd7d2-584c-4d99-bdec-a73e6c213b18"/>
+ <img src="https://github.com/AbuSuudy/SoundKube/assets/15980314/d199f513-a130-4e0c-b7f6-9ca091ea332c"/>
 </p>
- <br> <br>
-
 ## Technology used 
 React, Vite build tool, tailwind CSS, HighCharts and deployed to Azure Static Web Apps using Github actions. 
 
@@ -23,7 +21,7 @@ VITE_SPOTIFY_SCOPES = "user-top-read"
 ## Mobile Demo
 
 <div align="center">
-  <video  src="https://github.com/AbuSuudy/SoundKube/assets/15980314/b6c5a356-094e-4716-ae55-8a6720138a42"  width="500" />
+  <video  src="https://github.com/AbuSuudy/SoundKube/assets/15980314/68c662fd-6b2a-44bf-a2b6-f962ec1ab123" />
 </div>
    
 ## Authentication 
