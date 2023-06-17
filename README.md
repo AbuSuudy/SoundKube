@@ -5,6 +5,7 @@ Soundkube is an web app that uses the spotify api to display a users listening h
 <p align="center">
  <img src="https://github.com/AbuSuudy/SoundKube/assets/15980314/d199f513-a130-4e0c-b7f6-9ca091ea332c"/>
 </p>
+
 ## Technology used 
 React, Vite build tool, tailwind CSS, HighCharts and deployed to Azure Static Web Apps using Github actions. 
 
