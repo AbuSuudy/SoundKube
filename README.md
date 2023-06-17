@@ -19,6 +19,11 @@ VITE_SPOTIFY_CLIENT_ID=""
 VITE_SPOTIFY_REDIRECT_URI= "http://127.0.0.1:5173/Artist"
 VITE_SPOTIFY_SCOPES = "user-top-read"
 ```
+
+## Desktop Demo 
+
+https://github.com/AbuSuudy/SoundKube/assets/15980314/66e7a500-c1d8-4045-8805-c2750418fc31
+
 ## Mobile Demo
 
 <div align="center">
