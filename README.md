@@ -20,8 +20,12 @@ VITE_SPOTIFY_CLIENT_ID=""
 VITE_SPOTIFY_REDIRECT_URI= "http://127.0.0.1:5173/Artist"
 VITE_SPOTIFY_SCOPES = "user-top-read"
 ```
-## Demo On desktop and mobile
+## Mobile Demo
 
+<div align="center">
+  <video  src="https://github.com/AbuSuudy/SoundKube/assets/15980314/b6c5a356-094e-4716-ae55-8a6720138a42"  width="500" />
+</div>
+   
 ## Authentication 
 Uses OAuth2 Authorisation code + PKCE since there is no backend to this app it cannot securely store a Client Secret because their entire source is available to the browser. The PKCE-enhanced Authorization Code Flow introduces a secret created by the calling application that can be verified by the authorization server; this secret is called the Code Verifier. Additionally, the calling app creates a transform value of the Code Verifier called the Code Challenge and sends this value over HTTPS to retrieve an Authorization Code. This way, a malicious attacker can only intercept the Authorization Code, and they cannot exchange it for a token without the Code Verifier.
 
