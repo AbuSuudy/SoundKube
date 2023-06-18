@@ -20,7 +20,7 @@ import { useNavigate } from "react-router-dom";
 export default function Artist() {
   const [data, setData] = useState<ArtistTable[]>([]);
   const { setNavBarVis, setSelectedIndex } = useContext(menuContext);
-  const [timeframe, setTimeframe] = useState<{}>({ long: "long_term" });
+  const [timeframe, setTimeframe] = useState<{}>({ short: "short_term" });
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const [code, setCode] = useState(urlParams.get("code"));

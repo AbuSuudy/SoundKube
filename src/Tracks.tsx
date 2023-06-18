@@ -20,7 +20,7 @@ import SoundCube from "../src/assets/SoundCube.svg";
 export default function Tracks() {
   const [data, setData] = useState<TracksTable[]>([]);
   const { setSelectedIndex } = useContext(menuContext);
-  const [timeframe, setTimeframe] = useState<{}>({ long: "long_term" });
+  const [timeframe, setTimeframe] = useState<{}>({ short: "short_term" });
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const columnHelper = createColumnHelper<TracksTable>();
