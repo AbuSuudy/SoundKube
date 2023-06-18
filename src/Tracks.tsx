@@ -2,7 +2,7 @@ import { Dropdown } from "./Dropdown";
 import Sketch from "react-p5";
 import { SinDraw, SinSetup } from "./SineWave";
 import { SpotifySearchParam } from "./Model/Models";
-import { Item } from "./Model/Tracks";
+import { TrackItem } from "./Model/Tracks";
 import { topTracks } from "./API/UserDataAPI";
 import { useContext, useEffect, useState } from "react";
 import { SpotifyTimeRange, TracksTable } from "./Model/Models";
@@ -50,7 +50,7 @@ export default function Tracks() {
         Offset: 0,
       } as SpotifySearchParam);
 
-      response?.data.items.forEach((element: Item) => {
+      response?.forEach((element: TrackItem) => {
         trackList.push({
           image: element.album.images[0].url,
           name: element.artists[0].name,

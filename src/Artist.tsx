@@ -3,7 +3,8 @@ import Sketch from "react-p5";
 import { spotifyAccessToken } from "./API/SpotifyAuthenticationAPI";
 import { topArtist } from "./API/UserDataAPI";
 import { Dropdown } from "./Dropdown";
-import { Item, SpotifySearchParam } from "./Model/Models";
+import { SpotifySearchParam } from "./Model/Models";
+import { Artist, ArtistItem } from "./Model/ArtistModel";
 import { SinDraw, SinSetup } from "./SineWave";
 import SoundCube from "../src/assets/SoundCube.svg";
 import {
@@ -17,7 +18,7 @@ import { menuContext } from "./App";
 import { ArtistTable, SpotifyTimeRange } from "./Model/Models";
 import { useNavigate } from "react-router-dom";
 
-export default function Artist() {
+export default function Artists() {
   const [data, setData] = useState<ArtistTable[]>([]);
   const { setNavBarVis, setSelectedIndex } = useContext(menuContext);
   const [timeframe, setTimeframe] = useState<{}>({ short: "short_term" });
@@ -55,7 +56,7 @@ export default function Artist() {
           Offset: 0,
         } as SpotifySearchParam);
 
-        response?.data.items.forEach((element: Item) => {
+        response?.forEach((element: ArtistItem) => {
           artistList.push({
             image: element.images[0].url,
             name: element.name,

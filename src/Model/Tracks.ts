@@ -1,5 +1,5 @@
 export interface Tracks {
-  items: Item[];
+  items: TrackItem[];
   total: number;
   limit: number;
   offset: number;
@@ -8,7 +8,7 @@ export interface Tracks {
   previous: null;
 }
 
-export interface Item {
+export interface TrackItem {
   album: Album;
   artists: Artist[];
   available_markets: string[];
