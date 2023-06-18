@@ -13,10 +13,8 @@ import {
   getPaginationRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-
 import { menuContext } from "./App";
 import { ArtistTable, SpotifyTimeRange } from "./Model/Models";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 export default function Artist() {
@@ -56,8 +54,6 @@ export default function Artist() {
           Limit: 50,
           Offset: 0,
         } as SpotifySearchParam);
-
-        
 
         response?.data.items.forEach((element: Item) => {
           artistList.push({
@@ -122,6 +118,7 @@ export default function Artist() {
     getPaginationRowModel: getPaginationRowModel(),
     manualPagination: window.innerWidth < 1024 ? true : false,
     getCoreRowModel: getCoreRowModel(),
+    initialState: { pagination: { pageSize: 25 } },
   });
 
   return (
@@ -217,7 +214,7 @@ export default function Artist() {
             table.setPageSize(Number(e.target.value));
           }}
         >
-          {[10, 20, 30, 40, 50].map((pageSize) => (
+          {[10, 25, 50].map((pageSize) => (
             <option key={pageSize} value={pageSize}>
               Show {pageSize}
             </option>

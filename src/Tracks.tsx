@@ -100,6 +100,7 @@ export default function Tracks() {
     getPaginationRowModel: getPaginationRowModel(),
     manualPagination: window.innerWidth < 1024 ? true : false,
     getCoreRowModel: getCoreRowModel(),
+    initialState: { pagination: { pageSize: 25 } },
   });
 
   return (
@@ -195,7 +196,7 @@ export default function Tracks() {
             table.setPageSize(Number(e.target.value));
           }}
         >
-          {[10, 20, 30, 40, 50].map((pageSize) => (
+          {[10, 25, 50].map((pageSize) => (
             <option key={pageSize} value={pageSize}>
               Show {pageSize}
             </option>
