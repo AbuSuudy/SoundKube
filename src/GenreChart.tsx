@@ -192,6 +192,10 @@ export default function GenreChart() {
                 leaveTo="opacity-0 scale-95"
               >
                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                  <div className="w-72 font-bold py-4">
+                    How often these genres appear on your top 50 artist
+                  </div>
+
                   <table className="table-auto relative mx-auto transition ease-in-out delay-150 mb-14">
                     <thead>
                       {table.getHeaderGroups().map((headerGroup) => (
@@ -231,7 +235,6 @@ export default function GenreChart() {
                       ))}
                     </tbody>
                   </table>
-
                   <div className="mt-4 flex items-end">
                     <div className="flex items-center gap-2 rounded-lg  bg-white absolute bottom-0 right-0  mr-6 pb-5">
                       <button
