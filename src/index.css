@@ -21,7 +21,7 @@
 .fade-in-table {
   animation-name: fadeIn;
   animation-delay: 0s;
-  animation-duration: 1700ms;
+  animation-duration: 1600ms;
   animation-fill-mode: forwards;
 }
 
