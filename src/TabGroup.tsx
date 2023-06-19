@@ -16,6 +16,7 @@ export default function TabGroup() {
   const navigate = useNavigate();
 
   const { selectedIndex, setSelectedIndex } = useContext(menuContext);
+  const [location, setLocation] = useState<string>("Artist");
 
   return (
     <div
@@ -36,8 +37,11 @@ export default function TabGroup() {
                 )
               }
               onClick={() => {
-                navigate(category.path);
-                document.body.style.backgroundImage = "";
+                if (location != category.name) {
+                  document.body.style.backgroundImage = "none";
+                  setLocation(category.name);
+                  navigate(category.path);
+                }
               }}
             >
               {category.name}
