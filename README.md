@@ -1,6 +1,6 @@
 # SoundKube
 
-Soundkube is a web app that uses the Spotify API to display users listening habits. Such as top artists and tracks within a given time range: long, medium and short-term. Also creates a visualisation of the user's top genres. 
+Soundkube is a React Web app that uses the Spotify API to display users listening habits. Such as top artists and tracks within a given time range: long, medium and short-term. Also creates a visualisation of the user's top genres. 
 
 <p align="center">
  <img src="https://github.com/AbuSuudy/SoundKube/assets/15980314/d199f513-a130-4e0c-b7f6-9ca091ea332c"/>
