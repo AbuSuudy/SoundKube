@@ -109,7 +109,7 @@ export default function Tracks() {
       <div className="fixed top-0 left-0 invisible lg:visible">
         <Sketch setup={SinSetup} draw={SinDraw} />
       </div>
-      <table className="fade-in table-auto relative mx-auto transition ease-in-out delay-150 mb-10">
+      <table className="fade-in-table table-auto relative mx-auto transition ease-in-out delay-150 mb-10">
         <thead>
           {table.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>

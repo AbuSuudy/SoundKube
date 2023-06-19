@@ -18,6 +18,13 @@
   animation-fill-mode: forwards;
 }
 
+.fade-in-table {
+  animation-name: fadeIn;
+  animation-delay: 0s;
+  animation-duration: 1700ms;
+  animation-fill-mode: forwards;
+}
+
 @keyframes fadeOut {
   0% {
     opacity: 1;
