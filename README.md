@@ -1,16 +1,16 @@
 # SoundKube
 
-Soundkube is a web app that uses the Spotify API to display users listening habits. Such as top artists and tracks within a given time range: long, medium and short-term. Also creates a visualisation of the user's top genres. 
+Soundkube is a React Web app that uses the Spotify API to display users listening habits. Such as top artists and tracks within a given time range: long, medium and short-term. Also creates a visualisation of the user's top genres. 
 
 <p align="center">
  <img src="https://github.com/AbuSuudy/SoundKube/assets/15980314/d199f513-a130-4e0c-b7f6-9ca091ea332c"/>
 </p>
 
 ## Technology used 
-React, Vite build tool, Tailwind CSS, Headless UI, HighCharts and deployed to Azure Static Web Apps using Github actions. 
+React, Vite, Tailwind CSS, Headless UI, HighCharts and deployed to Azure Static Web Apps using Github actions. 
 
 ## Setup 
-Due to Spotify branding guidelines, I would need to submit the app to Spotify to be approved to be used for a wider audience. This is just a side project so that is beyond the scope of this project. To be able to use https://www.soundkube.com/  you would need to contact me to add you as a registered user on the Spotify developer dashboard. If not you could always create your own app on the Spotify developer dashboard and run this locally and plug in your credentials in a .env.development. file.
+Due to Spotify branding guidelines, I would need to submit the app to Spotify to be approved to be used for a wider audience. This is just a side project so that is beyond the scope of this project. To be able to use https://www.soundkube.co.uk/  you would need to contact me to add you as a registered user on the Spotify developer dashboard. If not you could always create your own app on the Spotify developer dashboard and run this locally and plug in your credentials in a .env.development. file.
 
 ```comment
 VITE_API_URL="https://accounts.spotify.com/"
