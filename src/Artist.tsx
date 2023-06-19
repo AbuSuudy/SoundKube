@@ -29,9 +29,8 @@ export default function Artists() {
 
   function setBackground() {
     if (window.innerWidth < 500) {
-      document.body.style.backgroundRepeat = "no-repeat";
+      document.body.style.backgroundPosition = "right";
       document.body.style.backgroundSize = "cover";
-      document.body.style.backgroundPosition = "center bottom";
       document.body.style.backgroundImage = `url(${SoundCube})`;
     }
   }
