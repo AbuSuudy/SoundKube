@@ -28,6 +28,8 @@ export default function Tracks() {
   function setBackground() {
     if (window.innerWidth < 500) {
       document.body.style.backgroundImage = "none";
+      document.body.style.backgroundSize = "cover";
+      document.body.style.backgroundRepeat = "no-repeat";
       document.body.style.backgroundPositionX = "23%";
       document.body.style.backgroundImage = `url(${SoundCube})`;
     }
