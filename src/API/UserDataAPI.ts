@@ -63,6 +63,7 @@ export const topArtist = async (param: SpotifySearchParam) => {
   try {
     let artistResponse: ArtistItem[] = [];
 
+    let offset = 0;
     for (let i = 0; i < 2; i++) {
       let response = await spotifyAuthenticationAPI.get<Artist>(
         "/me/top/artists",
@@ -75,12 +76,13 @@ export const topArtist = async (param: SpotifySearchParam) => {
           params: {
             time_range: param.TimeRange,
             limit: param.Limit,
-            offset: param.Offset + i,
+            offset: offset,
           },
         }
       );
 
       artistResponse = artistResponse.concat(response.data.items);
+      offset += 50;
     }
 
     return artistResponse;
@@ -101,7 +103,7 @@ export const topArtist = async (param: SpotifySearchParam) => {
 export const topTracks = async (param: SpotifySearchParam) => {
   try {
     let responseData: TrackItem[] = [];
-
+    let offset = 0;
     for (let i = 0; i < 2; i++) {
       let response = await spotifyAuthenticationAPI.get<Tracks>(
         "/me/top/tracks",
@@ -114,11 +116,12 @@ export const topTracks = async (param: SpotifySearchParam) => {
           params: {
             time_range: param.TimeRange,
             limit: param.Limit,
-            offset: param.Offset + i,
+            offset: offset,
           },
         }
       );
 
+      offset += 50;
       responseData = responseData.concat(response?.data.items);
     }
 
