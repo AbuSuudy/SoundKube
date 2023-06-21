@@ -9,9 +9,9 @@ function classNames(...classes: string[]) {
 
 export default function TabGroup() {
   let [categories] = useState([
-    { name: "Artist", path: "/Artist" },
+    { name: "Artists", path: "/Artist" },
     { name: "Tracks", path: "/Tracks" },
-    { name: "Genre", path: "/Genre" },
+    { name: "Genres", path: "/Genre" },
   ]);
   const navigate = useNavigate();
 
