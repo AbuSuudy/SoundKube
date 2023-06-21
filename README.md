@@ -31,6 +31,6 @@ https://github.com/AbuSuudy/SoundKube/assets/15980314/66e7a500-c1d8-4045-8805-c2
 </div>
    
 ## Authentication 
-Uses OAuth2 Authorisation code + PKCE since there is no backend to this app it cannot securely store a Client Secret since the whole app is client side. The PKCE-enhanced Authorization Code Flow introduces a secret created by the calling application that can be verified by the authorization server; this secret is called the Code Verifier. Additionally, the calling app creates a transform value of the Code Verifier called the Code Challenge and sends this value over HTTPS to retrieve an Authorization Code. This way, a malicious attacker can only intercept the Authorization Code, and they cannot exchange it for a token without the Code Verifier.
+Uses OAuth2 Authorisation code + PKCE since there is no backend (that I own) to this app it cannot securely store a Client Secret since the whole app is client side. The PKCE-enhanced Authorization Code Flow introduces a secret created by the calling application that can be verified by the authorization server; this secret is called the Code Verifier. Additionally, the calling app creates a transform value of the Code Verifier called the Code Challenge and sends this value over HTTPS to retrieve an Authorization Code. This way, a malicious attacker can only intercept the Authorization Code, and they cannot exchange it for a token without the Code Verifier.
 
 
