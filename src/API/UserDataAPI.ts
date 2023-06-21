@@ -82,7 +82,7 @@ export const topArtist = async (param: SpotifySearchParam) => {
       );
 
       artistResponse = artistResponse.concat(response.data.items);
-      offset += 49;
+      offset += 43;
     }
 
     return artistResponse;
