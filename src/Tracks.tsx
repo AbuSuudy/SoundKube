@@ -197,7 +197,7 @@ export default function Tracks() {
             table.setPageSize(Number(e.target.value));
           }}
         >
-          {[10, 25, 50].map((pageSize) => (
+          {[10, 25, 50, 75, 100].map((pageSize) => (
             <option key={pageSize} value={pageSize}>
               Show {pageSize}
             </option>

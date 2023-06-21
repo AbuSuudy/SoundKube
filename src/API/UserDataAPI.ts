@@ -63,6 +63,27 @@ export const topArtist = async (param: SpotifySearchParam) => {
   try {
     let artistResponse: ArtistItem[] = [];
 
+    //short artist only returns 50
+    if (param.TimeRange == "short_term") {
+      await spotifyAuthenticationAPI
+        .get<Artist>("/me/top/artists", {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem(
+              "SPOTIFY_ACCESS_TOKEN"
+            )}`,
+          },
+          params: {
+            time_range: param.TimeRange,
+            limit: param.Limit,
+            offset: param.Offset,
+          },
+        })
+        .then((data) => {
+          return data.data.items;
+        });
+    }
+
+    //long and medium return 100
     let offset = 0;
     for (let i = 0; i < 2; i++) {
       let response = await spotifyAuthenticationAPI.get<Artist>(
@@ -82,10 +103,13 @@ export const topArtist = async (param: SpotifySearchParam) => {
       );
 
       artistResponse = artistResponse.concat(response.data.items);
-      offset += 43;
+      offset += 49;
     }
 
-    return artistResponse;
+    //duplicates returned from API so need to filter
+    return artistResponse.filter(
+      (v, i, a) => a.findIndex((v2) => v2.uri === v.uri) === i
+    );
   } catch (error) {
     if (axios.isAxiosError(error)) {
       if (error.response?.status == 403) {
@@ -124,8 +148,10 @@ export const topTracks = async (param: SpotifySearchParam) => {
       offset += 49;
       responseData = responseData.concat(response?.data.items);
     }
-
-    return responseData;
+    //duplicates returned from API so need to filter
+    return responseData.filter(
+      (v, i, a) => a.findIndex((v2) => v2.uri === v.uri) === i
+    );
   } catch (error) {
     toast.error("Error Getting Top Tracks");
   }
