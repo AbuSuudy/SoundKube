@@ -27,7 +27,7 @@ function App() {
 
   setInterval(() => {
     spotifyRefreshAccessToken();
-  }, 3000000);
+  }, 3601000);
 
   let location = useLocation();
 
