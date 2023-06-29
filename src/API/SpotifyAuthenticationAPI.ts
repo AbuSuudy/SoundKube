@@ -82,6 +82,8 @@ export const spotifyRefreshAccessToken = async () => {
       );
     }
   } catch (error) {
-    toast.error("Error Refreshing Access Token");
+    if (document.onfocus) {
+      toast.error("Error Refreshing Access Token");
+    }
   }
 };
