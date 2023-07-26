@@ -6,10 +6,13 @@ import jblSpeakerImg from "../src/assets/JBLSpeaker.svg";
 function Homepage() {
   const [jblImageVisability, setJblImageVisability] = useState(true);
 
-  setTimeout(function () {
-    setJblImageVisability(false);
-    const element = document.getElementById("root");
-  }, 4000);
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible") {
+      setTimeout(function () {
+        setJblImageVisability(false);
+      }, 4000);
+    }
+  });
 
   return (
     <div className="App">

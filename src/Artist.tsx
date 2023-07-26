@@ -16,7 +16,6 @@ import {
 } from "@tanstack/react-table";
 import { menuContext } from "./App";
 import { ArtistTable, SpotifyTimeRange } from "./Model/Models";
-import { useNavigate } from "react-router-dom";
 
 export default function Artists() {
   const [data, setData] = useState<ArtistTable[]>([]);
@@ -25,7 +24,6 @@ export default function Artists() {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const [code, setCode] = useState(urlParams.get("code"));
-  const navigate = useNavigate();
 
   function setBackground() {
     if (window.innerWidth < 500) {
