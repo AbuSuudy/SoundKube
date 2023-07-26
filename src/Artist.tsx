@@ -57,7 +57,10 @@ export default function Artists() {
 
         response?.forEach((element: ArtistItem) => {
           artistList.push({
-            image: element.images[0].url,
+            image:
+              window.innerWidth < 500
+                ? element.images[2].url
+                : element.images[0].url,
             name: element.name,
             genres: element.genres,
           });

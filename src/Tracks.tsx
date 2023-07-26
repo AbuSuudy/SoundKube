@@ -53,7 +53,10 @@ export default function Tracks() {
 
       response?.forEach((element: TrackItem) => {
         trackList.push({
-          image: element.album.images[0].url,
+          image:
+            window.innerWidth < 500
+              ? element.album.images[2].url
+              : element.album.images[0].url,
           name: element.artists[0].name,
           track: element.name,
         });
