@@ -1,4 +1,6 @@
-# SoundKube
+# SoundKube.com
+
+⚠️I have to approve your account on the spotify developer portal to use https://www.soundkube.co.uk/⚠️
 
 Soundkube is a React Web app that uses the Spotify API to display users listening habits. Such as top artists and tracks within a given time range: long, medium and short-term. Also creates a visualisation of the user's top genres. 
 
